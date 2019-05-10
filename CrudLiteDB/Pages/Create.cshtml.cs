@@ -31,7 +31,7 @@ namespace CrudLiteDB.Pages
             var bugs = _db.Context.GetCollection<Cliente>();
             bugs.Insert(Cliente);
 
-            TempData["message"] = $"New bug created : {Cliente.Nome}";
+            TempData["message"] = $"Novo Cliente Cadastrado : {Cliente.Nome}";
 
             return RedirectToPage("./index");
 
