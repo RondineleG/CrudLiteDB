@@ -1,0 +1,55 @@
+﻿@page
+@model CrudLiteDB.Pages.IndexModel
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Cadastro de Clientes Usando LiteDB</h2>
+<hr />
+
+@{
+    var contador = 1;
+}
+
+<h2>LiteDB</h2>
+<hr>
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-info" role="alert">@TempData["message"]</div>
+}
+
+<a asp-page="create" class="btn btn-success">Create new</a>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <td>Id</td>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model.Clientes)
+        {
+            <tr>
+                <td>@contador</td>
+                <td>@cliente.Id</td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Telefone</td>
+                <td>
+                    <a asp-page="details" asp-route-id="@cliente.Id" class="btn btn-default">Details</a>
+                    <a asp-page="delete" asp-route-id="@cliente.Id" class="btn btn-danger">Delete</a>
+                    <a asp-page="edit" asp-route-id="@cliente.Id" class="btn btn-primary">Edit</a>
+                </td>
+            </tr>
+            contador++;
+        }
+    </tbody>
+</table>
+

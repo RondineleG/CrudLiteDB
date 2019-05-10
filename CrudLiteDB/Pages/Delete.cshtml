@@ -1,0 +1,23 @@
+﻿@page
+@model CrudLiteDB.Pages.DeleteModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h2>Delete</h2>
+<hr />
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Model.Cliente.Nome</div>
+    <div class="panel-body">
+        @Model.Cliente.Telefone
+    </div>
+</div>
+
+<form method="post">
+    <input asp-for="Cliente.Id" hidden />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-page="index" class="btn btn-link">Back to list</a>
+</form>
