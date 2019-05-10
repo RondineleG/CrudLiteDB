@@ -12,7 +12,7 @@ namespace CrudLiteDB.Pages
 
         public void OnGet(int id)
         {
-            using (var db = new LiteDatabase(@"Cliente.db"))
+            using (var db = new LiteDatabase(@"CrudLiteDB.db"))
             {
                 Cliente = db.GetCollection<Cliente>().FindById(id);
             }

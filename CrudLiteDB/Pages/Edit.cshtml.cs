@@ -29,7 +29,7 @@ namespace CrudLiteDB.Pages
                 return Page();
             }
 
-            using (var db = new LiteDatabase(@"bug.db"))
+            using (var db = new LiteDatabase(@"CrudLiteDB.db"))
             {
                 var bugs = db.GetCollection<Cliente>();
                 bugs.Update(Cliente);

@@ -16,7 +16,7 @@ namespace CrudLiteDB.Pages
 
         public void OnGet(int id)
         {
-            using (var db = new LiteDatabase(@"bug.db"))
+            using (var db = new LiteDatabase(@"CrudLiteDB.db"))
             {
                 Cliente = db.GetCollection<Cliente>().FindById(id);
             }
@@ -24,7 +24,7 @@ namespace CrudLiteDB.Pages
 
         public IActionResult OnPost()
         {
-            using (var db = new LiteDatabase(@"bug.db"))
+            using (var db = new LiteDatabase(@"CrudLiteDB.db"))
             {
                 var bugs = db.GetCollection<Cliente>();
                 bugs.Delete(Cliente.Id);
