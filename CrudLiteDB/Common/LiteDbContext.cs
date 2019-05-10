@@ -17,7 +17,7 @@ namespace CrudLiteDB.Common
             }
             catch (Exception ex)
             {
-                throw new Exception("Can find or create LiteDb database.", ex);
+                throw new Exception("Nao foi possivel banco de Dados.", ex);
             }
         }           
     }    
