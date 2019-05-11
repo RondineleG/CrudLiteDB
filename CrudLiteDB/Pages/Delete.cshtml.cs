@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CrudLiteDB.Models;
+﻿using CrudLiteDB.Models;
 using LiteDB;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -26,8 +22,8 @@ namespace CrudLiteDB.Pages
         {
             using (var db = new LiteDatabase(@"CrudLiteDB.db"))
             {
-                var bugs = db.GetCollection<Cliente>();
-                bugs.Delete(Cliente.Id);
+                var cliente = db.GetCollection<Cliente>();
+                cliente.Delete(Cliente.Id);
 
             }
             return RedirectToPage("./index");
