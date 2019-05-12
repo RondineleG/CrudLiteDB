@@ -23,7 +23,7 @@ namespace CrudLiteDB.Pages
             using (var db = new LiteDatabase(@"CrudLiteDB.db"))
             {
                 var clientes = db.GetCollection<Cliente>();
-                clientes.Delete(Cliente.Id);
+                clientes.Delete(Cliente.ClienteId);
 
             }
             return RedirectToPage("./index");

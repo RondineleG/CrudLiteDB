@@ -5,7 +5,7 @@ namespace CrudLiteDB.Models
 {
     public class Cliente
     {
-        public int Id { get; set; }
+        public int ClienteId { get; set; }
         [Required]
         public string Nome { get; set; }
 

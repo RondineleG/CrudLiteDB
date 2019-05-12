@@ -27,8 +27,8 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>#</th>
-            <td>Id</td>
+            <th>Codigo</th>
+            <td>ClienteId</td>
             <th>Nome</th>
             <th>Telefone</th>
             <th></th>
@@ -39,13 +39,13 @@
         {
             <tr>
                 <td>@contador</td>
-                <td>@cliente.Id</td>
+                <td>@cliente.ClienteId</td>
                 <td>@cliente.Nome</td>
                 <td>@cliente.Telefone</td>
                 <td>
-                    <a asp-page="details" asp-route-id="@cliente.Id" class="btn btn-default">Details</a>
-                    <a asp-page="delete" asp-route-id="@cliente.Id" class="btn btn-danger">Delete</a>
-                    <a asp-page="edit" asp-route-id="@cliente.Id" class="btn btn-primary">Edit</a>
+                    <a asp-page="details" asp-route-id="@cliente.ClienteId" class="btn btn-default">Details</a>
+                    <a asp-page="delete" asp-route-id="@cliente.ClienteId" class="btn btn-danger">Delete</a>
+                    <a asp-page="edit" asp-route-id="@cliente.ClienteId" class="btn btn-primary">Edit</a>
                 </td>
             </tr>
             contador++;
