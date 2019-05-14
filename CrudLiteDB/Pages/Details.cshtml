@@ -25,23 +25,22 @@
 
             <div class="campo">
 
-                <input asp-for="Cliente.Nome" placeholder="Nome" id="nome" name="nome" value="">
+                <input asp-for="Cliente.Nome" placeholder="Nome" class="form-control">
             </div>
             <div class="campo">
-                <input asp-for="Cliente.Sobrenome" placeholder="Sobrenome" id="snome" name="snome" value="">
+                <input asp-for="Cliente.Sobrenome" placeholder="Sobrenome" class="form-control">
             </div>
         </fieldset>
         <fieldset class="grupo">
             <div class="campo">
-                <input asp-for="Cliente.Email" placeholder="E-mail" id="email" name="email" value="">
+                <input asp-for="Cliente.Email" placeholder="E-mail" class="form-control">
             </div>
             <div class="campo">
                 <input asp-for="Cliente.Telefone" onkeyup="somenteNumeros(this);"
-                       placeholder="Telefone" id="telefone" name="telefone" value="">
+                       placeholder="Telefone" class="form-control">
             </div>
         </fieldset>
 
-        <button type="submit" class="botao botao-submit">Salvar</button>
-        <a asp-page="index" class="botao botao-link">Voltar</a>
+        <a asp-page="index" class="btn btn-link">Voltar</a>
     </fieldset>
 </form>

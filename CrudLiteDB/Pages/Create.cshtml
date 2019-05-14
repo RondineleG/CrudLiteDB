@@ -15,28 +15,37 @@
 <h2>Novo Cliente</h2>
 <hr />
 
-<form method="post">   
-
+<form autocomplete="on" class="form form-horizontal" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <fieldset>
         <fieldset class="grupo">
             <div class="campo">
-                <input asp-for="Cliente.Nome" placeholder="Nome" id="nome" name="nome" value="">
+                <input asp-for="Cliente.Nome" placeholder="Nome" class="form-control"  value="" />
+                <span asp-validation-for="Cliente.Nome"></span>
             </div>
-            <div class="campo">
-                <input asp-for="Cliente.Sobrenome" placeholder="Sobrenome" id="snome" name="snome" value="">
-            </div>
-        </fieldset>
+             
+             <div class="campo">
+                 <input asp-for="Cliente.Sobrenome" placeholder="Sobrenome" class="form-control" value=""/>
+                 <span asp-validation-for="Cliente.Sobrenome"></span>
+             </div>
+        </fieldset>           
+        
         <fieldset class="grupo">
             <div class="campo">
-                <input asp-for="Cliente.Email" placeholder="E-mail" id="email" name="email" value="">
+                <input asp-for="Cliente.Email" placeholder="Email" class="form-control"  value="" />
+                <span asp-validation-for="Cliente.Email"></span>
             </div>
+
+
             <div class="campo">
-                <input asp-for="Cliente.Telefone" onkeyup="somenteNumeros(this);"
-                       placeholder="Telefone" id="telefone" name="telefone" value="">
+                <input asp-for="Cliente.Telefone" placeholder="Telefone"  class="form-control"  value="" />
+                <span asp-validation-for="Cliente.Telefone"></span>
             </div>
         </fieldset>
+        <div class="campo">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a asp-page="index" class="btn btn-link">Voltar</a>
+        </div>
 
-            <button type="submit" class="botao botao-submit">Salvar</button>
-            <a asp-page="index" class="botao botao-link">Voltar</a>
         </fieldset>
 </form>

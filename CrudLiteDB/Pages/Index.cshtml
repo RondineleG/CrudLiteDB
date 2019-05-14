@@ -32,12 +32,11 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>######</th>
-            <td>ClienteId</td>
-            <th>Nome</th>
-            <th>Sobrenome</th>
-            <th>Email</th>
-            <th>Telefone</th>
+            <th>Codigo</th>
+            <th>ClienteId</th>
+            <th>Nome</th>             
+            <th>Email</th>            
+            <th>Data Cadastro</th>
             <th></th>
         </tr>
     </thead>
@@ -45,16 +44,16 @@
         @foreach (var cliente in Model.Clientes)
         {
         <tr>
-            <td>
-                <a asp-page="details" asp-route-id="@cliente.ClienteId" class="botao btn-default">Details</a>
-                <a asp-page="delete" asp-route-id="@cliente.ClienteId" class="botao btn-danger">Delete</a>
-                <a asp-page="edit" asp-route-id="@cliente.ClienteId" class="botao btn-primary">Edit</a>
-            </td>           
+            <td>@contador</td>
             <td>@cliente.ClienteId</td>
             <td>@cliente.Nome</td>
-            <td>@cliente.Sobrenome</td>
             <td>@cliente.Email</td>
-            <td>@cliente.Telefone</td>
+            <td>@cliente.DataCadastro</td>
+            <td>
+                <a asp-page="details" asp-route-id="@cliente.ClienteId" class="btn btn-default">Detalhes</a>
+                <a asp-page="delete" asp-route-id="@cliente.ClienteId" class="btn btn-danger">Deletar</a>
+                <a asp-page="edit" asp-route-id="@cliente.ClienteId" class="btn btn-primary">Editar</a>
+            </td>
         </tr>
             contador++;
         }
