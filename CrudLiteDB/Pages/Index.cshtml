@@ -13,7 +13,12 @@
 @{
     var contador = 1;
 }
+<head>
 
+    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/js/main.js" rel="javascript" />
+
+</head>
 <h2>LiteDB</h2>
 <hr>
 
@@ -27,9 +32,11 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Codigo</th>
+            <th>######</th>
             <td>ClienteId</td>
             <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
             <th>Telefone</th>
             <th></th>
         </tr>
@@ -37,17 +44,18 @@
     <tbody>
         @foreach (var cliente in Model.Clientes)
         {
-            <tr>
-                <td>@contador</td>
-                <td>@cliente.ClienteId</td>
-                <td>@cliente.Nome</td>
-                <td>@cliente.Telefone</td>
-                <td>
-                    <a asp-page="details" asp-route-id="@cliente.ClienteId" class="btn btn-default">Details</a>
-                    <a asp-page="delete" asp-route-id="@cliente.ClienteId" class="btn btn-danger">Delete</a>
-                    <a asp-page="edit" asp-route-id="@cliente.ClienteId" class="btn btn-primary">Edit</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <a asp-page="details" asp-route-id="@cliente.ClienteId" class="botao btn-default">Details</a>
+                <a asp-page="delete" asp-route-id="@cliente.ClienteId" class="botao btn-danger">Delete</a>
+                <a asp-page="edit" asp-route-id="@cliente.ClienteId" class="botao btn-primary">Edit</a>
+            </td>           
+            <td>@cliente.ClienteId</td>
+            <td>@cliente.Nome</td>
+            <td>@cliente.Sobrenome</td>
+            <td>@cliente.Email</td>
+            <td>@cliente.Telefone</td>
+        </tr>
             contador++;
         }
     </tbody>

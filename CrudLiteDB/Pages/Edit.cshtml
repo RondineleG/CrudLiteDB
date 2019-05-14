@@ -5,18 +5,41 @@
     ViewData["Title"] = "Editar";
 }
 
+<head>
+
+    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/js/main.js" rel="javascript" />
+
+</head>
 
 <h2>Editar Cliente</h2>
 <hr />
 
 <form method="post">
-    <input asp-for="Cliente.ClienteId" hidden />
+    
+    <fieldset>
+        <input asp-for="Cliente.ClienteId" hidden />
+        <fieldset class="grupo">
 
-    <input asp-for="Cliente.Nome" placeholder="Name" class="form-control" />
-    <br>
-    <input asp-for="Cliente.Telefone" placeholder="Description" class="form-control" />
-    <br>
-    <button type="submit" class="btn btn-primary">Salvar</button>
-    <a asp-page="index" class="btn btn-link">Voltar</a>
+            <div class="campo">
 
+                <input asp-for="Cliente.Nome" placeholder="Nome" id="nome" name="nome" value="">
+            </div>
+            <div class="campo">
+                <input asp-for="Cliente.Sobrenome" placeholder="Sobrenome" id="snome" name="snome" value="">
+            </div>
+        </fieldset>
+        <fieldset class="grupo">
+            <div class="campo">
+                <input asp-for="Cliente.Email" placeholder="E-mail" id="email" name="email" value="">
+            </div>
+            <div class="campo">
+                <input asp-for="Cliente.Telefone" onkeyup="somenteNumeros(this);"
+                       placeholder="Telefone" id="telefone" name="telefone" value="">
+            </div>
+        </fieldset>
+
+        <button type="submit" class="botao botao-submit">Salvar</button>
+        <a asp-page="index" class="botao botao-link">Voltar</a>
+    </fieldset>
 </form>

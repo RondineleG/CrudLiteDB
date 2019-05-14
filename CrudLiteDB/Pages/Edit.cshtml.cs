@@ -31,8 +31,8 @@ namespace CrudLiteDB.Pages
 
             using (var db = new LiteDatabase(@"CrudLiteDB.db"))
             {
-                var bugs = db.GetCollection<Cliente>();
-                bugs.Update(Cliente);
+                var clientes = db.GetCollection<Cliente>();
+                clientes.Update(Cliente);
 
             }
             return RedirectToPage("./index");
